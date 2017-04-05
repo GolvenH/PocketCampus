@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md_blue_400">#42A5F5</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#2196F3</color>
+    <color name="colorAccentDark">#1976D2</color>
+    <color name="colorAccentLight">#2196F3</color>
+    <color name="color_window_background">#ffffff</color>
+    <color name="color_window_background_night">#303030</color>
+    <color name="color_disable">#4cffffff</color>
+    <color name="color_text_primary_dark">#303030</color>
+    <color name="color_text_primary_light">#CECECE</color>
+    <color name="color_text_background_day">#F6F6F6</color>
+    <color name="color_text_background_night">#2B2B2B</color>
+    <color name="color_division">#C7C7C7</color>
+    <color name="gary_30">#888888</color>
+    <color name="color_read">#9E9E9E</color>
+    <color name="line_bg">#e6e6e6</color>
+    <color name="white">#FFFFFF</color>
+    <string name="str_search_hint">Search</string>
+    <color name="colorHintText">#B6B6B6</color>
+    <color name="colorDivider">#888888</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="button_color">#AEDBBF</color>
+    <color name="btn_press">#ff336BA3</color>
+
+    <color name="colorTextHashTag">#9C27B0</color>
+    <color name="colorTextPhone">#FFC107</color>
+    <color name="colorTextUrl">#64dd17</color>
+    <color name="colorTextMention">#1DA1F2</color>
+    <color name="colorTextCustom">#1DA1F2</color>
+
+    <array name="tab_nocolors">
+        <item name="tab_1">#ffffff</item>
+        <item name="tab_2">#ffffff</item>
+        <item name="tab_3">#ffffff</item>
+        <item name="tab_4">#ffffff</item>
+        <item name="tab_5">#ffffff</item>
+    </array>
+</resources>

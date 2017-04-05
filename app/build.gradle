@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+apply plugin: 'AndResGuard'
+
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.bzu.yhd.pocketcampus"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 10
+        versionName "1.0.2.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        resConfigs "zh" // 仅支持中文
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file(STORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    // 编译选项
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    // recommend
+    dexOptions {
+        jumboMode = true
+    }
+}
+
+andResGuard {
+    mappingFile = file("./resource_mapping.txt")
+    use7zip = true
+    useSign = true
+    keepRoot = false
+    // 白名单
+    whiteList = [
+            "R.mipmap.ic_launcher", // ic_launcher
+            "R.style.primary*", // Colorful框架
+            "R.style.accent*", // Colorful框架
+            "R.id.*"
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.webp",
+            "resources.arsc"
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.1.16'
+        //path = "/usr/local/bin/7za"
+    }
+}
+
+ext {
+    butter_knife_version = "8.5.1"
+    retrofit_version = "2.2.0"
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    testCompile 'junit:junit:4.12'
+
+    //ButterKnife黄油刀注解控件
+    compile "com.jakewharton:butterknife:$butter_knife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butter_knife_version"
+    //Glide图片加载库
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //Rxjava
+    compile 'io.reactivex:rxjava:1.2.7'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //Retrofit2
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+
+    //EventBus
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile('com.iarcuschin:simpleratingbar:0.1.5') {
+        exclude group: 'com.android.support'
+        exclude group: 'org.androidannotations'
+    }
+    compile 'com.xw.repo:bubbleseekbar:3.2@aar'
+    compile 'com.github.woxingxiao:VectorCompatTextView:1.1'
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+
+    compile project(':libraries:library')
+    compile project(':libraries:SlideBack')
+    compile project(':libraries:ahbottomnavigation')
+
+}
