@@ -53,7 +53,7 @@ public class AboutActivity extends BaseActivity {
 
         initializeToolbar();
 
-        Glide.with(this).load(R.drawable.pic_movie_projector).into(mHeaderImg);
+        Glide.with(this).load(R.mipmap.flowbloom).into(mHeaderImg);
         try {
             PackageManager manager = getPackageManager();
             PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
@@ -73,19 +73,9 @@ public class AboutActivity extends BaseActivity {
         mLicenseText.setText(Html.fromHtml(getString(R.string.license)));
     }
 
-    @OnClick({R.id.about_gmail_img, R.id.about_github_img, R.id.about_license_text})
+    @OnClick({R.id.about_github_img, R.id.about_license_text})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.about_gmail_img:
-                String s1 = "邮箱";
-                String s2 = getString(R.string.gmail_address);
-
-                ClipboardManager cmb = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clipData = ClipData.newPlainText("content", s2);
-                cmb.setPrimaryClip(clipData);
-
-                showToast(getString(R.string.hint_clipboard, s1, s2));
-                break;
             case R.id.about_github_img:
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

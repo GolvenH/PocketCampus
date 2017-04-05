@@ -8,6 +8,8 @@
     <color name="colorAccentLight">#2196F3</color>
     <color name="color_window_background">#ffffff</color>
     <color name="color_window_background_night">#303030</color>
+    <color name="color_ahbn_background_night">#242424</color>
+
     <color name="color_disable">#4cffffff</color>
     <color name="color_text_primary_dark">#303030</color>
     <color name="color_text_primary_light">#CECECE</color>

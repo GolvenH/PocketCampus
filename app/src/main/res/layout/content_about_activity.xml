@@ -40,25 +40,6 @@
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/four_dp"
             android:gravity="center"
-            android:text="@string/contact_me"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="@dimen/text_size_16sp"
-            app:drawableLeftCompat="@drawable/svg_ic_contact"
-            app:tintDrawableInTextColor="true"/>
-
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/about_gmail_img"
-            android:layout_width="@dimen/space4x"
-            android:layout_height="@dimen/space4x"
-            android:layout_margin="@dimen/space2x"
-            android:layout_marginLeft="@dimen/space2x"
-            app:srcCompat="@drawable/svg_ic_gmail"/>
-
-        <com.xw.repo.VectorCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/four_dp"
-            android:gravity="center"
             android:text="@string/open_source_address"
             android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/text_size_16sp"
