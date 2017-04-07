@@ -1,8 +1,5 @@
 package com.bzu.yhd.pocketcampus.view.activity;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -18,6 +15,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bzu.yhd.pocketcampus.R;
+import com.bzu.yhd.pocketcampus.view.base.BaseActivity;
 
 import org.polaric.colorful.Colorful;
 
@@ -50,9 +48,7 @@ public class AboutActivity extends BaseActivity {
 
         setContentView(R.layout.activity_about);
         ButterKnife.bind(this);
-
         initializeToolbar();
-
         Glide.with(this).load(R.mipmap.flowbloom).into(mHeaderImg);
         try {
             PackageManager manager = getPackageManager();

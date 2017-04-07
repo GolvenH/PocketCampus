@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.bzu.yhd.pocketcampus.R;
+import com.bzu.yhd.pocketcampus.view.base.BaseActivity;
 import com.bzu.yhd.pocketcampus.view.widget.TimeButton;
 import com.bzu.yhd.pocketcampus.view.widget.TransitionView;
 

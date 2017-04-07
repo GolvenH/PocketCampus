@@ -58,11 +58,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activity.MainActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
             android:name=".view.activity.ThemeActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -74,18 +69,8 @@
             android:label="@string/settings"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.activity.MovieDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".view.activity.OpenLicenseActivity"
             android:label="@string/open_source_permission"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.activity.WebActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.activity.BoxOfficeActivity"
-            android:label="@string/box_office"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.HomeActivity"

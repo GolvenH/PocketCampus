@@ -3,6 +3,7 @@ package com.bzu.yhd.pocketcampus.view.activity;
 import android.os.Bundle;
 
 import com.bzu.yhd.pocketcampus.R;
+import com.bzu.yhd.pocketcampus.view.base.BaseActivity;
 import com.bzu.yhd.pocketcampus.view.fragment.SettingsFragment;
 
 /**

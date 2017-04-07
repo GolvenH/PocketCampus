@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="md_blue_400">#42A5F5</color>
-    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimary">#42A5F5</color>
     <color name="colorPrimaryDark">#1976D2</color>
     <color name="colorAccent">#2196F3</color>
     <color name="colorAccentDark">#1976D2</color>
@@ -42,4 +41,34 @@
         <item name="tab_4">#ffffff</item>
         <item name="tab_5">#ffffff</item>
     </array>
+
+    <color name="table_indicator">#cfd8dc</color>
+    <color name="grey_text_5d5c5c">#5d5c5c</color>
+
+    <color name="alpha_black_color_10">#19000000</color>
+    <color name="alpha_black_color_2">#05000000</color>
+    <color name="alpha_black_color_20">#33000000</color>
+    <color name="alpha_black_color_3">#10000000</color>
+    <color name="alpha_black_color_30">#4c000000</color>
+    <color name="alpha_black_color_40">#66000000</color>
+    <color name="alpha_black_color_5">#0c000000</color>
+    <color name="alpha_black_color_50">#7f000000</color>
+    <color name="alpha_black_color_60">#99000000</color>
+    <color name="alpha_black_color_70">#b2000000</color>
+    <color name="alpha_black_color_8">#0e000000</color>
+    <color name="alpha_black_color_80">#cc000000</color>
+    <color name="alpha_black_color_90">#e5000000</color>
+    <color name="alpha_white_color_10">#19ffffff</color>
+    <color name="alpha_white_color_2">#05ffffff</color>
+    <color name="alpha_white_color_20">#33ffffff</color>
+    <color name="alpha_white_color_3">#10ffffff</color>
+    <color name="alpha_white_color_30">#4cffffff</color>
+    <color name="alpha_white_color_40">#66ffffff</color>
+    <color name="alpha_white_color_5">#0cffffff</color>
+    <color name="alpha_white_color_50">#7fffffff</color>
+    <color name="alpha_white_color_60">#99ffffff</color>
+    <color name="alpha_white_color_70">#b2ffffff</color>
+    <color name="alpha_white_color_8">#0effffff</color>
+    <color name="alpha_white_color_80">#ccffffff</color>
+    <color name="alpha_white_color_90">#e5ffffff</color>
 </resources>

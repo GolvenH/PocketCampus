@@ -1,8 +1,6 @@
 package com.bzu.yhd.pocketcampus.view.fragment;
 
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -17,7 +15,6 @@ import android.widget.Toast;
 import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.util.PrefUtil;
 import com.bzu.yhd.pocketcampus.util.SharedPrefHelper;
-import com.bzu.yhd.pocketcampus.view.activity.ThemeActivity;
 import com.xw.repo.BubbleSeekBar;
 
 import org.polaric.colorful.Colorful;
@@ -71,7 +68,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
 
         mDayTimePref.setOnPreferenceClickListener(this);
         mNightTimePref.setOnPreferenceClickListener(this);
+/*
         findPreference(getString(R.string.key_theme)).setOnPreferenceClickListener(this);
+*/
         mCachePreference.setOnPreferenceClickListener(this);
         findPreference(getString(R.string.key_feedback)).setOnPreferenceClickListener(this);
     }
@@ -99,19 +98,13 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
                 showPickTimeDialog(false);
                 break;
             case 3:
-                ThemeActivity.navigation(getActivity());
-                break;
-            case 4:
                 if (!"无缓存".equals(mCachePreference.getSummary()) && clearCache()) {
                     mCachePreference.setSummary("无缓存");
                     Toast.makeText(getActivity(), "已清除", Toast.LENGTH_SHORT).show();
-                }
+               }
                 break;
-            case 5:
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setData(Uri.parse(getString(R.string.questionnaire_url)));
-                startActivity(Intent.createChooser(intent, "请选择浏览器"));
+            case 4:
+                Toast.makeText(getActivity(),"吐槽大会",Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;

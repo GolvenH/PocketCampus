@@ -23,10 +23,6 @@
             android:order="2"
             android:summary="18:00"
             android:title="夜间模式开始时间"/>
-        <Preference
-            android:key="@string/key_theme"
-            android:order="3"
-            android:title="变色龙主题"/>
     </PreferenceCategory>
 
     <PreferenceCategory

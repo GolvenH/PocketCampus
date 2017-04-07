@@ -22,8 +22,10 @@ public class MyApplication extends Application {
 
         mActivityHelper = new ActivityHelper();
         registerActivityLifecycleCallbacks(mActivityHelper);
-
         sMyApplication = this;
+
+        //CrashHandler.getInstance().init(this);
+
     }
 
     public static ActivityHelper getActivityHelper() {

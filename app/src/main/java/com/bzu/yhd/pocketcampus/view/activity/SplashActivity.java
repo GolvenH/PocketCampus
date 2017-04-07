@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bzu.yhd.pocketcampus.R;
-import com.bzu.yhd.pocketcampus.server.ApiHelper;
 import com.bzu.yhd.pocketcampus.util.Logy;
 import com.bzu.yhd.pocketcampus.util.SharedPrefHelper;
 import com.flaviofaria.kenburnsview.KenBurnsView;
@@ -138,19 +137,14 @@ public class SplashActivity extends AppCompatActivity {
                 Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
 
                 Colorful.defaults()
-                        .primaryColor(Colorful.ThemeColor.DARK)
-                        .accentColor(Colorful.ThemeColor.DEEP_ORANGE)
+                        .primaryColor(Colorful.ThemeColor.BLUE)
+                        .accentColor(Colorful.ThemeColor.LIME)
                         .translucent(false)
                         .night(false);
                 Colorful.init(getApplicationContext());
 
                 SharedPrefHelper.init(getApplicationContext());
                 Logy.init(true);
-                String s1 = ""; // 聚合Api Key
-                String s2 = ""; // 易源App Id
-                String s3 = ""; // 易源Api Key
-                ApiHelper.init(s1, s2, s3); // TODO: 2017-02-24 add your api key to request data
-//                CrashHandler.getInstance().init(this);
             }
         }.start();
     }

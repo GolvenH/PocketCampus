@@ -12,9 +12,11 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
 import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.util.PrefUtil;
+import com.bzu.yhd.pocketcampus.view.base.CheckPermissionsActivity;
 import com.bzu.yhd.pocketcampus.view.fragment.FirstFragment;
-import com.bzu.yhd.pocketcampus.view.fragment.ThirdFragment;
-import com.bzu.yhd.pocketcampus.view.fragment.UserInfoFragment;
+import com.bzu.yhd.pocketcampus.view.fragment.SecondFragment;
+import com.bzu.yhd.pocketcampus.view.bottom.user.UserInfoFragment;
+import com.bzu.yhd.pocketcampus.view.bottom.home.HomeListFragment;
 
 import org.polaric.colorful.Colorful;
 
@@ -25,10 +27,9 @@ import java.util.List;
 /**
  * 首页
  * </p>
- *
  * @CreateBy Yhd On 2017/2/15 8:40
  */
-public class HomeActivity extends CheckPermissionsActivity  {
+public class HomeActivity extends CheckPermissionsActivity {
     private List<Fragment> fragments = new ArrayList<>();
     private int currentTabIndex;
     private String mAutoSwitchedHint;
@@ -38,7 +39,6 @@ public class HomeActivity extends CheckPermissionsActivity  {
     private AHBottomNavigation bottomNavigation;
     private static final String STATE_SELECTED_TAB_INDEX = "selected_tab_index";
     private int mPreSelectedTabIdx = 0;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,15 +82,14 @@ public class HomeActivity extends CheckPermissionsActivity  {
     }
 
     private void initFragment(Bundle savedInstanceState) {
+        fragments.add(HomeListFragment.newInstance(0));
         fragments.add(FirstFragment.newInstance(0));
-        fragments.add(FirstFragment.newInstance(2));
-        fragments.add(ThirdFragment.newInstance("ss", "ss"));
+        fragments.add(SecondFragment.newInstance("ss", "ss"));
         fragments.add(UserInfoFragment.newInstance("sss", "sss"));
 
         if (savedInstanceState == null) {
             showFragment(fragments.get(0));
         }
-
     }
 
     private void initAHBottomNavigation(Bundle savedInstanceState) {
@@ -221,5 +220,9 @@ public class HomeActivity extends CheckPermissionsActivity  {
         } else {
             super.onBackPressed();
         }
+    }
+    @Override
+    protected void onResume() {
+       super.onResume();
     }
 }

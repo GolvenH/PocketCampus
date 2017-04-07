@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.model.OpenModel;
 import com.bzu.yhd.pocketcampus.view.adapter.LicenseListAdapter;
+import com.bzu.yhd.pocketcampus.view.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;

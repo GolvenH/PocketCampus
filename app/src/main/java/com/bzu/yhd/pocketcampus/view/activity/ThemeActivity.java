@@ -8,8 +8,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
 
 import com.bzu.yhd.pocketcampus.R;
-import com.bzu.yhd.pocketcampus.view.fragment.DayModeFragment;
-import com.bzu.yhd.pocketcampus.view.fragment.NightModeFragment;
+import com.bzu.yhd.pocketcampus.view.base.BaseActivity;
+import com.bzu.yhd.pocketcampus.view.theme.DayModeFragment;
+import com.bzu.yhd.pocketcampus.view.theme.NightModeFragment;
 
 import org.polaric.colorful.Colorful;
 

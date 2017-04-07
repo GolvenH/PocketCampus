@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <com.astuetz.PagerSlidingTabStrip
+                android:id="@+id/pagerstabs"
+                android:layout_width="wrap_content"
+                android:layout_height="45.0dip"
+                android:layout_centerInParent="true"
+                android:paddingTop="2.0dip"
+                app:pstsTabPaddingLeftRight="20.0dip"
+                app:pstsTextAllCaps="false"
+                app:pstsTextAlpha="1.0"
+                app:pstsTextSelectedAlpha="1.0"
+                app:pstsTextSelectedStyle="normal"
+                app:pstsTextStyle="normal" />
+
+            <ImageView
+                android:id="@+id/btn_topic_list"
+                android:layout_width="45.0dip"
+                android:layout_height="45.0dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="15.5dip"
+                android:paddingRight="15.5dip"
+                android:src="@mipmap/icon_explore_nearby" />
+
+            <ImageView
+                android:id="@+id/btn_explore_right"
+                android:layout_width="45.0dip"
+                android:layout_height="45.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="15.0dip"
+                android:paddingRight="15.0dip"
+                android:src="@mipmap/icon_explore_publish" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_news_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+</LinearLayout>

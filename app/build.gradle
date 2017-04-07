@@ -89,9 +89,10 @@ dependencies {
     compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
     compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-
     //EventBus
     compile 'org.greenrobot:eventbus:3.0.0'
+    //pagerslidingtabstrip 在不同的页面之间的导航ViewPager互动指标
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
 
     compile('com.iarcuschin:simpleratingbar:0.1.5') {
         exclude group: 'com.android.support'
