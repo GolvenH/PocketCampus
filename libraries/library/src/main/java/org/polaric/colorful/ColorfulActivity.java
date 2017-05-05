@@ -33,7 +33,7 @@ public abstract class ColorfulActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (!Colorful.getThemeString().equals(themeString)) {
-            Log.d(Util.LOG_TAG, "Theme change detected, restarting activity");
+            Log.d(Util.LOG_TAG, "Theme change detected, restarting weather");
             recreate();
         }
     }

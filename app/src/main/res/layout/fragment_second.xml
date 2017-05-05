@@ -48,15 +48,4 @@
       android:layout_height="match_parent"
       app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-
-  <android.support.design.widget.FloatingActionButton
-      android:id="@+id/fab"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="bottom|end"
-      android:layout_marginBottom="@dimen/fab_margin_bottom"
-      android:layout_marginRight="@dimen/fab_margin_right"
-      app:layout_behavior="com.bzu.yhd.pocketcampus.view.widget.ScrollAwareFABBehavior"
-      app:srcCompat="@drawable/svg_ic_top"/>
-
 </android.support.design.widget.CoordinatorLayout>

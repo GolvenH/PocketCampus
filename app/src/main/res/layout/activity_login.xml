@@ -5,15 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg"
-    tools:context=".view.activity.LoginActivity">
+    android:background="@drawable/bubble_background">
 
     <RelativeLayout
         android:id="@+id/cv"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="350dp"
         android:layout_centerInParent="true"
-        android:layout_margin="20dp">
+        android:layout_margin="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +23,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp">
+                android:layout_height="30dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -39,7 +38,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:gravity="center"
@@ -47,24 +46,23 @@
                 android:paddingStart="30dp">
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/email_input_layout"
+                    android:id="@+id/phone_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:counterEnabled="true"
-                    app:counterMaxLength="16"
+                    app:counterMaxLength="11"
                     app:errorEnabled="true"
                     app:hintAnimationEnabled="true"
                     android:textColorHint="#c5c5c5">
 
 
-                <android.support.design.widget.TextInputEditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/et_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="账户"
-                        android:background="@drawable/selector_bg_edit"
                         android:textColor="@color/white"
-                        android:inputType="textPersonName"
+                        android:inputType="number"
                         android:maxLines="1"
                         android:textSize="18sp" />
 
@@ -73,7 +71,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="95dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:paddingEnd="30dp"
@@ -90,13 +88,11 @@
                     app:hintAnimationEnabled="true"
                     android:textColorHint="#c5c5c5">
 
-
-                <android.support.design.widget.TextInputEditText
+                    <android.support.design.widget.TextInputEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="密码"
-                        android:background="@drawable/selector_bg_edit"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
                         android:textSize="18sp"
@@ -109,7 +105,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:paddingEnd="30dp"
                 android:paddingStart="30dp"
                 android:gravity="center">
@@ -126,7 +122,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:orientation="horizontal">
@@ -144,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_gravity="left"
-                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margins"
                         android:background="@drawable/tag_background"
                         android:padding="8dp"
                         android:text="忘记密码?"
@@ -164,7 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_gravity="right"
-                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margins"
                         android:background="@drawable/tag_background"
                         android:padding="8dp"
                         android:text="立即注册"
@@ -175,5 +171,28 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/grav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+        app:array_colors="@array/bubble"
+        app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+        app:regular_cell_size="300"
+        app:regular_variance="200"
+        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+        app:ball_from_size="10dp"
+        app:ball_to_size="20dp"
+        app:animationGenerators="@array/BubbleAnimations"
+        app:side_to_side_min_duration="8000"
+        app:side_to_side_max_duration="8000"
+        app:side_to_side_direction="leftToRight"
+        app:shake_direction="vertical"
+        app:shake_min_duration="10000"
+        app:shake_max_duration="20000"
+        app:shake_variance="500dp"
+        />
 
 </RelativeLayout>

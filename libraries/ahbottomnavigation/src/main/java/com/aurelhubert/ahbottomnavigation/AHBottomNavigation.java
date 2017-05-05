@@ -206,7 +206,7 @@ public class AHBottomNavigation extends FrameLayout {
 		// Item colors
 		titleColorActive = ContextCompat.getColor(context, R.color.colorBottomNavigationAccent);
 		titleColorInactive = ContextCompat.getColor(context, R.color.colorBottomNavigationInactive);
-		// Colors for colored bottom navigation
+		// Colors for colored bottomnav navigation
 		coloredTitleColorActive = ContextCompat.getColor(context, R.color.colorBottomNavigationActiveColored);
 		coloredTitleColorInactive = ContextCompat.getColor(context, R.color.colorBottomNavigationInactiveColored);
 
@@ -228,7 +228,7 @@ public class AHBottomNavigation extends FrameLayout {
 	}
 
 	/**
-	 * Create the items in the bottom navigation
+	 * Create the items in the bottomnav navigation
 	 */
 	private void createItems() {
 		if (items.size() < MIN_ITEMS) {
@@ -332,7 +332,7 @@ public class AHBottomNavigation extends FrameLayout {
     }
 
 	/**
-	 * Create classic items (only 3 items in the bottom navigation)
+	 * Create classic items (only 3 items in the bottomnav navigation)
 	 *
 	 * @param linearLayout The layout where the items are added
 	 */
@@ -454,7 +454,7 @@ public class AHBottomNavigation extends FrameLayout {
 	}
 
 	/**
-	 * Create small items (more than 3 items in the bottom navigation)
+	 * Create small items (more than 3 items in the bottomnav navigation)
 	 *
 	 * @param linearLayout The layout where the items are added
 	 */
@@ -997,18 +997,18 @@ public class AHBottomNavigation extends FrameLayout {
 	}
 
 	/**
-	 * Return the bottom navigation background color
+	 * Return the bottomnav navigation background color
 	 *
-	 * @return The bottom navigation background color
+	 * @return The bottomnav navigation background color
 	 */
 	public int getDefaultBackgroundColor() {
 		return defaultBackgroundColor;
 	}
 
 	/**
-	 * Set the bottom navigation background color
+	 * Set the bottomnav navigation background color
 	 *
-	 * @param defaultBackgroundColor The bottom navigation background color
+	 * @param defaultBackgroundColor The bottomnav navigation background color
 	 */
 	public void setDefaultBackgroundColor(@ColorInt int defaultBackgroundColor) {
 		this.defaultBackgroundColor = defaultBackgroundColor;
@@ -1016,9 +1016,9 @@ public class AHBottomNavigation extends FrameLayout {
 	}
 
 	/**
-	 * Set the bottom navigation background resource
+	 * Set the bottomnav navigation background resource
 	 *
-	 * @param defaultBackgroundResource The bottom navigation background resource
+	 * @param defaultBackgroundResource The bottomnav navigation background resource
 	 */
 	public void setDefaultBackgroundResource(@DrawableRes int defaultBackgroundResource) {
 		this.defaultBackgroundResource = defaultBackgroundResource;
@@ -1066,7 +1066,7 @@ public class AHBottomNavigation extends FrameLayout {
 	}
 
 	/**
-	 * Set the colors used when the bottom bar uses the colored mode
+	 * Set the colors used when the bottomnav bar uses the colored mode
 	 *
 	 * @param colorActive   The active color
 	 * @param colorInactive The inactive color
@@ -1235,7 +1235,7 @@ public class AHBottomNavigation extends FrameLayout {
 			needHideBottomNavigation = true;
 			hideBottomNavigationWithAnimation = withAnimation;
 		} else {
-			// Hide bottom navigation
+			// Hide bottomnav navigation
 			ViewCompat.animate(this)
 					.translationY(bottomNavigationHeight)
 					.setInterpolator(new LinearOutSlowInInterpolator())
@@ -1260,7 +1260,7 @@ public class AHBottomNavigation extends FrameLayout {
 		if (bottomNavigationBehavior != null) {
 			bottomNavigationBehavior.resetOffset(this, withAnimation);
 		} else {
-			// Show bottom navigation
+			// Show bottomnav navigation
 			ViewCompat.animate(this)
 					.translationY(0)
 					.setInterpolator(new LinearOutSlowInInterpolator())
@@ -1541,9 +1541,9 @@ public class AHBottomNavigation extends FrameLayout {
 
 	public interface OnNavigationPositionListener {
 		/**
-		 * Called when the bottom navigation position is changed
+		 * Called when the bottomnav navigation position is changed
 		 *
-		 * @param y int: y translation of bottom navigation
+		 * @param y int: y translation of bottomnav navigation
 		 */
 		void onPositionChange(int y);
 	}

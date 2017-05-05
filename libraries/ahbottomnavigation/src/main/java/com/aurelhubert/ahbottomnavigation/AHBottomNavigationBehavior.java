@@ -280,7 +280,7 @@ public class AHBottomNavigationBehavior<V extends View> extends VerticalScrollin
 	}
 
 	/**
-	 * Update Snackbar bottom margin
+	 * Update Snackbar bottomnav margin
 	 */
 	public void updateSnackbar(final View child, View dependency) {
 

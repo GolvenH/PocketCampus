@@ -34,10 +34,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bzu.yhd.pocketcampus.R;
-import com.bzu.yhd.pocketcampus.util.Util;
-import com.bzu.yhd.pocketcampus.view.activity.ThemeActivity;
-import com.bzu.yhd.pocketcampus.view.widget.QuoteTextView;
+import com.bzu.yhd.pocketcampus.widget.utils.Util;
+import com.bzu.yhd.pocketcampus.view.main.ThemeActivity;
 import com.bzu.yhd.pocketcampus.widget.ClipRevealFrame;
+import com.bzu.yhd.pocketcampus.widget.QuoteTextView;
 
 import org.polaric.colorful.ColorPickerDialog;
 import org.polaric.colorful.Colorful;

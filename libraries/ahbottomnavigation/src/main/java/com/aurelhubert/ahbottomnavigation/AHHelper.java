@@ -65,7 +65,7 @@ public class AHHelper {
 	}
 
 	/**
-	 * Update bottom margin with animation
+	 * Update bottomnav margin with animation
 	 */
 	public static void updateBottomMargin(final View view, int fromMargin, int toMargin, int duration) {
 		ValueAnimator animator = ValueAnimator.ofFloat(fromMargin, toMargin);

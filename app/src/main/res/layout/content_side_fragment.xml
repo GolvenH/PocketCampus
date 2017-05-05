@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".view.activity.AboutActivity"
     tools:showIn="@layout/fragment_side">
 
     <LinearLayout
@@ -89,7 +88,7 @@
 
         </LinearLayout>
 
-        <com.bzu.yhd.pocketcampus.view.widget.QuoteTextView
+        <com.bzu.yhd.pocketcampus.widget.QuoteTextView
             android:id="@+id/quote_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

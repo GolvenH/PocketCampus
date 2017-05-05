@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * RecyclerView适配器基类
  * <p/>
- * Created by woxignxiao on 2017-01-25.
+ * Created by Yhd on 2017-01-25.
  */
 public abstract class BaseRecyclerAdapter<T, VH extends BaseRecyclerViewHolder> extends RecyclerView.Adapter<VH> {
 

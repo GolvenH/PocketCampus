@@ -1,11 +1,15 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    def app = rootProject.ext.android
+
+    compileSdkVersion app.compileSdkVersion
+    buildToolsVersion app.buildToolsVersion
+
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+
         versionCode 1
         versionName "1.0"
 
@@ -24,7 +28,7 @@ android {
 }
 
 dependencies {
-    provided "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    provided "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:preference-v14:$rootProject.ext.supportLibraryVersion"
+    provided "com.android.support:appcompat-v7:25.3.1"
+    provided "com.android.support:recyclerview-v7:25.3.1"
+    compile "com.android.support:preference-v14:25.3.1"
 }

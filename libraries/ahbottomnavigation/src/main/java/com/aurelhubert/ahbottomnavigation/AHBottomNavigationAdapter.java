@@ -31,7 +31,7 @@ public class AHBottomNavigationAdapter {
 	}
 
 	/**
-	 * Setup bottom navigation
+	 * Setup bottomnav navigation
 	 *
 	 * @param ahBottomNavigation AHBottomNavigation: Bottom navigation
 	 */
@@ -40,7 +40,7 @@ public class AHBottomNavigationAdapter {
 	}
 
 	/**
-	 * Setup bottom navigation (with colors)
+	 * Setup bottomnav navigation (with colors)
 	 *
 	 * @param ahBottomNavigation AHBottomNavigation: Bottom navigation
 	 * @param colors             int[]: Colors of the item

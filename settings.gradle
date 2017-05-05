@@ -1,4 +1,9 @@
 include ':app'
+//Colorful主题切换框架
 include ':libraries:library'
+//滑动返回
 include ':libraries:SlideBack'
+//bottomnavigation底部导航栏
 include ':libraries:ahbottomnavigation'
+//动画
+include ':libraries:grav'

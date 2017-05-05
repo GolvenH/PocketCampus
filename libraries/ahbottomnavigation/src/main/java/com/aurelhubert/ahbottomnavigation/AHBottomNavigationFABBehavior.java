@@ -35,7 +35,7 @@ public class AHBottomNavigationFABBehavior extends CoordinatorLayout.Behavior<Fl
 	}
 
 	/**
-	 * Update floating action button bottom margin
+	 * Update floating action button bottomnav margin
 	 */
 	private void updateFloatingActionButton(FloatingActionButton child, View dependency) {
 		if (child != null && dependency != null && dependency instanceof Snackbar.SnackbarLayout) {

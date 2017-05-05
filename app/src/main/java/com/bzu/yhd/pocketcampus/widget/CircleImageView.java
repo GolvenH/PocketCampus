@@ -18,11 +18,9 @@ import android.util.AttributeSet;
 import android.support.v7.widget.AppCompatImageView;
 import com.bzu.yhd.pocketcampus.R;
 /**
- * Created by hcc on 2016/12/28 13:35
- * 100332338@qq.com
- * LeisureRead
- *
- * @HotBitmapGG 圆形头像
+ * 圆形头像
+ * @CreateBy yhd
+ * @CreateOn 2017/4/7 10:58
  */
 public class CircleImageView extends AppCompatImageView {
   private static final String TAG = "CircleImageView";

@@ -7,7 +7,7 @@ import android.view.View;
 /**
  * BaseRecyclerViewHolder
  * <p/>
- * Created by woxignxiao on 2017-01-25.
+ * Created by Yhd on 2017-01-25.
  */
 public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
 

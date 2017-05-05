@@ -5,7 +5,7 @@
     <color name="colorAccent">#2196F3</color>
     <color name="colorAccentDark">#1976D2</color>
     <color name="colorAccentLight">#2196F3</color>
-    <color name="color_window_background">#ffffff</color>
+    <color name="color_window_background">#e5ffffff</color>
     <color name="color_window_background_night">#303030</color>
     <color name="color_ahbn_background_night">#242424</color>
 
@@ -19,9 +19,8 @@
     <color name="color_read">#9E9E9E</color>
     <color name="line_bg">#e6e6e6</color>
     <color name="white">#FFFFFF</color>
-    <string name="str_search_hint">Search</string>
-    <color name="colorHintText">#B6B6B6</color>
-    <color name="colorDivider">#888888</color>
+    <color name="colorHintText">#ff336BA3</color>
+    <color name="colorDivider">#1976D2</color>
 
     <color name="black_overlay">#66000000</color>
 
@@ -35,11 +34,11 @@
     <color name="colorTextCustom">#1DA1F2</color>
 
     <array name="tab_nocolors">
-        <item name="tab_1">#ffffff</item>
-        <item name="tab_2">#ffffff</item>
-        <item name="tab_3">#ffffff</item>
-        <item name="tab_4">#ffffff</item>
-        <item name="tab_5">#ffffff</item>
+        <item name="tab_1">#e5ffffff</item>
+        <item name="tab_2">#e5ffffff</item>
+        <item name="tab_3">#e5ffffff</item>
+        <item name="tab_4">#e5ffffff</item>
+        <item name="tab_5">#e5ffffff</item>
     </array>
 
     <color name="table_indicator">#cfd8dc</color>
@@ -71,4 +70,34 @@
     <color name="alpha_white_color_8">#0effffff</color>
     <color name="alpha_white_color_80">#ccffffff</color>
     <color name="alpha_white_color_90">#e5ffffff</color>
+
+
+
+
+    <color name="colorSunrise">#0D4A6A</color>
+    <color name="colorSunset">#201D45</color>
+
+    <color name="textHint">#8C8C8C</color>
+
+
+    <color name="aboutIcon">#106c99</color>
+    <!--多城市列表和卡片配色-->
+    <color name="multi_text">#C1C1C1</color>
+    <color name="multi_content">#696969</color>
+
+    <color name="sunnyText">#A88418</color>
+    <color name="sunny">#FFE498</color>
+    <color name="sunnyDark">#FFC000</color>
+
+    <color name="cloudyText">#728288</color>
+    <color name="cloudy">#D2E0E6</color>
+    <color name="cloudyDark">#A4BCC6</color>
+
+    <color name="rainyText">#035E8E</color>
+    <color name="rainy">#B2E8FE</color>
+    <color name="rainyDark">#58D2FA</color>
+
+    <color name="lineColor">#60d3d3d3</color>
+    <color name="defaultTextColor">#6f6f6f</color>
+
 </resources>

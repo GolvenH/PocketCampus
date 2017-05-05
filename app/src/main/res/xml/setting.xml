@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <PreferenceCategory
+        android:title="界面">
+        <SwitchPreference
+            android:checked="true"
+            android:defaultValue="true"
+            android:key="@string/key_auto_day_night"
+            android:order="0"
+            android:title="自动切换日夜模式"/>
+        <Preference
+            android:defaultValue="8"
+            android:key="@string/key_day_mode_time"
+            android:order="1"
+            android:summary="08:00"
+            android:title="日间模式开始时间"/>
+        <Preference
+            android:defaultValue="18"
+            android:key="@string/key_night_mode_time"
+            android:order="2"
+            android:summary="18:00"
+            android:title="夜间模式开始时间"/>
+        <Preference
+            android:key="change_icons"
+            android:title="更换天气图标"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="系统">
+        <Preference
+            android:key="change_update_time"
+            android:title="自动刷新频率"/>
+        <CheckBoxPreference
+            android:key="notification_model"
+            android:title="通知栏常驻"/>
+        <Preference
+            android:key="clear_cache"
+            android:title="清除缓存"/>
+    </PreferenceCategory>
+</PreferenceScreen>

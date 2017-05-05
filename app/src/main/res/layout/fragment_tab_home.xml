@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
      android:orientation="vertical">
@@ -20,32 +22,33 @@
                 android:layout_height="45.0dip"
                 android:layout_centerInParent="true"
                 android:paddingTop="2.0dip"
-                app:pstsTabPaddingLeftRight="20.0dip"
-                app:pstsTextAllCaps="false"
+                app:pstsTabPaddingLeftRight="10.0dip"
+                app:pstsTextAllCaps="true"
                 app:pstsTextAlpha="1.0"
                 app:pstsTextSelectedAlpha="1.0"
                 app:pstsTextSelectedStyle="normal"
                 app:pstsTextStyle="normal" />
 
             <ImageView
-                android:id="@+id/btn_topic_list"
+                android:id="@+id/btn_home_left"
                 android:layout_width="45.0dip"
                 android:layout_height="45.0dip"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:paddingLeft="15.5dip"
-                android:paddingRight="15.5dip"
-                android:src="@mipmap/icon_explore_nearby" />
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                app:srcCompat="@drawable/svg_weather"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
 
             <ImageView
-                android:id="@+id/btn_explore_right"
+                android:id="@+id/btn_home_right"
                 android:layout_width="45.0dip"
                 android:layout_height="45.0dip"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:paddingLeft="15.0dip"
-                android:paddingRight="15.0dip"
-                android:src="@mipmap/icon_explore_publish" />
+                android:paddingLeft="11.0dip"
+                android:paddingRight="11.0dip"
+                app:srcCompat="@drawable/svg_radar" />
+
         </RelativeLayout>
     </FrameLayout>
 

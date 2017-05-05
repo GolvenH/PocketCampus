@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bzu.yhd.pocketcampus.R;
-import com.bzu.yhd.pocketcampus.model.OpenModel;
-import com.bzu.yhd.pocketcampus.view.widget.QuoteTextView;
+import com.bzu.yhd.pocketcampus.bottomnav.home.service.OpenModel;
+import com.bzu.yhd.pocketcampus.widget.QuoteTextView;
 
 import org.polaric.colorful.Colorful;
 
@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 开源许可列表适配器
  * <p/>
- * Created by woxingxiao on 2017-02-19.
+ * Created by Yhd on 2017-02-19.
  */
 public class LicenseListAdapter extends BaseRecyclerAdapter<OpenModel, LicenseListAdapter.LicenseVH> {
 

@@ -16,11 +16,9 @@ import android.util.TypedValue;
 import android.view.View;
 import com.bzu.yhd.pocketcampus.R;
 /**
- * Created by hcc on 2016/12/28 13:35
- * 100332338@qq.com
- * LeisureRead
- *
- * @HotBitmapGG md的圆环进度条
+ * md的圆环进度条
+ * @CreateBy yhd
+ * @CreateOn 2017/4/7 10:58
  */
 public class CircleProgressView extends View {
 

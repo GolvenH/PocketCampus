@@ -120,7 +120,7 @@ public class SlideBackHelper {
                 // helper.printAllActivity();
                 // Log.e("TAG", "--------------------------------------------------");
                 Activity activity = helper.getPreActivity();
-                // Log.e("TAG", "SlideBackHelper-120行-onFocus(): " + preActivity[0] + ";" + activity);
+                // Log.e("TAG", "SlideBackHelper-120行-onFocus(): " + preActivity[0] + ";" + weather);
                 if (activity != preActivity[0]) {
                     // Log.e("TAG", "SlideBackHelper-122行-onFocus(): 上个Activity变了");
                     preActivity[0] = activity;
