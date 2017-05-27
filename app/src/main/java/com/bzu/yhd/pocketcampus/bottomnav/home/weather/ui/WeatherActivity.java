@@ -44,7 +44,7 @@ public class WeatherActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        initializeToolbar();
+        initToolbar();
         mReceiver = new MyReceiver();
         registerReceiver(mReceiver, new IntentFilter(getString(R.string.action_locate_succeed)));
 
@@ -88,6 +88,20 @@ public class WeatherActivity extends BaseActivity {
         PLog.i("onStop");
     }
 
+    /**
+     * 初始化Toolbar的功能
+     */
+    protected void initToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_weather, menu);
@@ -106,8 +120,15 @@ public class WeatherActivity extends BaseActivity {
     }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_location) {
+        if (item.getItemId() == R.id.action_location)
+        {
             showLocatedCityDialog(false, false);
+            return true;
+        }
+        if (item.getItemId() == android.R.id.home)
+        {
+            this.finish();
+            this.unregisterReceiver(mReceiver);
             return true;
         }
         return super.onOptionsItemSelected(item);

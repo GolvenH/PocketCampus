@@ -18,6 +18,9 @@ import org.polaric.colorful.Colorful;
 
 import java.lang.ref.WeakReference;
 
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobUser;
+
 /**
  * Created by hugo on 2015/10/25 0025.
  * 闪屏页
@@ -35,6 +38,8 @@ public class SplashActivity extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         super.onCreate(savedInstanceState);
 
+        Bmob.initialize(this, "1fbf365963748879b31dcef9fdbe38f8","bmob");
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -48,13 +53,7 @@ public class SplashActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
         }
-
-
-
-
-
         mHandler.sendEmptyMessageDelayed(1, 1000);
-
         /**
          * 三方初始化放入工作线程，加速App启动
          */
@@ -86,11 +85,24 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             SplashActivity activity = mWeakReference.get();
-            if (activity != null) {
-                Intent i=new Intent();
-                i.setClass(SplashActivity.this, LoginActivity.class);
-                startActivity(i);
-                activity.finish();
+
+            if (activity != null)
+            {
+                BmobUser bmobUser = BmobUser.getCurrentUser();
+                if(bmobUser != null){
+                    // 允许用户使用应用
+                    Intent i=new Intent();
+                    i.setClass(SplashActivity.this, HomeActivity.class);
+                    startActivity(i);
+                    activity.finish();
+                }else{
+                    //缓存用户对象为空时， 可打开用户注册界面…
+                    Intent in=new Intent();
+                    in.setClass(SplashActivity.this, LoginActivity.class);
+                    startActivity(in);
+                    activity.finish();
+                }
+
             }
         }
     }

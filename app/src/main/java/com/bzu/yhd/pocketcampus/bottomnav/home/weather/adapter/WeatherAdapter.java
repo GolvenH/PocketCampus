@@ -14,7 +14,7 @@ import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.base.BaseViewHolder;
 import com.bzu.yhd.pocketcampus.bottomnav.home.weather.domain.Weather;
 import com.bzu.yhd.pocketcampus.widget.AnimRecyclerViewAdapter;
-import com.bzu.yhd.pocketcampus.widget.ImageLoader;
+import com.bzu.yhd.pocketcampus.widget.ImageLoaders;
 import com.bzu.yhd.pocketcampus.widget.utils.PLog;
 import com.bzu.yhd.pocketcampus.widget.utils.SharedPreferenceUtil;
 import com.bzu.yhd.pocketcampus.widget.utils.Util;
@@ -94,9 +94,6 @@ public class WeatherAdapter extends AnimRecyclerViewAdapter<RecyclerView.ViewHol
             default:
                 break;
         }
-        if (SharedPreferenceUtil.getInstance().getMainAnim()) {
-            showItemAnim(holder.itemView, position);
-        }
     }
 
     @Override
@@ -138,7 +135,7 @@ public class WeatherAdapter extends AnimRecyclerViewAdapter<RecyclerView.ViewHol
 
                 tempPm.setText(String.format("PM2.5: %s μg/m³", Util.safeText(weather.aqi.city.pm25)));
                 tempQuality.setText(Util.safeText("空气质量： ", weather.aqi.city.qlty));
-                ImageLoader.load(itemView.getContext(),
+                ImageLoaders.load(itemView.getContext(),
                     SharedPreferenceUtil.getInstance().getInt(weather.now.cond.txt, R.mipmap.none),
                     weatherIcon);
             } catch (Exception e) {
@@ -276,7 +273,7 @@ public class WeatherAdapter extends AnimRecyclerViewAdapter<RecyclerView.ViewHol
                             PLog.e(e.toString());
                         }
                     }
-                    ImageLoader.load(mContext,
+                    ImageLoaders.load(mContext,
                         SharedPreferenceUtil.getInstance().getInt(weather.dailyForecast.get(i).cond.txtD, R.mipmap.none),
                         forecastIcon[i]);
                     forecastTemp[i].setText(

@@ -21,7 +21,7 @@
     <!-- 监听网络的变化 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <!-- 用于读取手机当前的状态,设备休眠 -->
+    <!-- 用于读取手机当前的状态,设备休眠-允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
@@ -44,16 +44,6 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="8b0522611530f06c59eec53ede24ec27" />
-        <meta-data
-            android:name="BUG_HD_SDK_GENERAL_KEY"
-            android:value="6c5241a92d395baa70c227300f5db822" />
-
-        <service android:name="com.amap.api.location.APSService" />
-        <service android:name=".bottomnav.home.service.AutoUpdateService" />
-
         <activity
             android:name=".view.main.SplashActivity"
             android:theme="@style/FirstTheme">
@@ -82,20 +72,31 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.main.LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.Sign" />
         <activity
             android:name=".bottomnav.home.weather.ui.WeatherActivity"
             android:label="@string/title_activity_weather"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".view.main.RegisterActivity"
-            android:label="@string/title_activity_register"
+            android:name=".bottomnav.user.MeEditActivity"
+            android:label="@string/title_activity_weather"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".view.main.RegisterActivity"
+            android:label="@string/title_activity_meedit"
+            android:theme="@style/AppTheme.Sign" />
+
         <service
             android:name=".bottomnav.home.service.LocationService"
             android:exported="false"
-            android:stopWithTask="true"></service>
+            android:stopWithTask="true" />
+        <service android:name=".bottomnav.home.service.AutoUpdateService" />
 
+        <activity
+            android:name=".bottomnav.user.RePasswdActivity"
+            android:label="@string/title_activity_re_passwd"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

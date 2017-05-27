@@ -1,7 +1,5 @@
 package com.bzu.yhd.pocketcampus.view.main;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,6 +7,7 @@ import android.view.MenuItem;
 
 import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.base.BaseActivity;
+import com.bzu.yhd.pocketcampus.base.BaseApplication;
 import com.bzu.yhd.pocketcampus.view.theme.DayModeFragment;
 import com.bzu.yhd.pocketcampus.view.theme.NightModeFragment;
 
@@ -24,14 +23,11 @@ import java.util.List;
  */
 public class ThemeActivity extends BaseActivity {
 
-    public static void navigation(Activity activity) {
-        activity.startActivity(new Intent(activity, ThemeActivity.class));
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         transparentStatusBar();
+        BaseApplication.getInstance().addActivity(this);
 
         setContentView(R.layout.activity_theme);
 

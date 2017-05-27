@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.base.BaseActivity;
+import com.bzu.yhd.pocketcampus.base.BaseApplication;
 
 import org.polaric.colorful.Colorful;
 
@@ -46,10 +47,11 @@ public class AboutActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         transparentStatusBar();
-
         setContentView(R.layout.activity_about);
         mUnbinder = ButterKnife.bind(this);
         initializeToolbar();
+        BaseApplication.getInstance().addActivity(this);
+
         Glide.with(this).load(R.mipmap.flowbloom).into(mHeaderImg);
         try {
             PackageManager manager = getPackageManager();
@@ -70,7 +72,7 @@ public class AboutActivity extends BaseActivity {
         mLicenseText.setText(Html.fromHtml(getString(R.string.license)));
     }
 
-    @OnClick({R.id.about_github_img, R.id.about_license_text})
+    @OnClick({R.id.about_github_img, R.id.about_license_text,R.id.feed_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.about_github_img:
@@ -81,6 +83,9 @@ public class AboutActivity extends BaseActivity {
                 break;
             case R.id.about_license_text:
                 navigateTo(OpenLicenseActivity.class);
+                break;
+            case R.id.feed_back:
+                showToast("意见反馈");
                 break;
         }
     }

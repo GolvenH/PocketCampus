@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <PreferenceCategory
-        android:title="界面">
+        android:title="基本设置">
         <SwitchPreference
             android:checked="true"
             android:defaultValue="true"
@@ -24,19 +24,36 @@
             android:summary="18:00"
             android:title="夜间模式开始时间"/>
         <Preference
-            android:key="change_icons"
+            android:key="@string/key_changeicons"
+            android:order="3"
             android:title="更换天气图标"/>
     </PreferenceCategory>
+
     <PreferenceCategory
         android:title="系统">
         <Preference
-            android:key="change_update_time"
+            android:key="@string/key_changetime"
+            android:order="4"
             android:title="自动刷新频率"/>
-        <CheckBoxPreference
-            android:key="notification_model"
+        <SwitchPreference
+            android:checked="true"
+            android:defaultValue="true"
+            android:key="@string/key_notmodel"
+            android:order="5"
             android:title="通知栏常驻"/>
         <Preference
-            android:key="clear_cache"
-            android:title="清除缓存"/>
+            android:key="@string/key_cache"
+            android:order="6"
+            android:title="清除缓存"
+            tools:summary="16KB"/>
+        <Preference
+            android:key="@string/key_feedback"
+            android:order="7"
+            android:title="关于APP"/>
+        <Preference
+            android:key="@string/key_logout"
+            android:order="8"
+            android:title="退出登陆"/>
     </PreferenceCategory>
+
 </PreferenceScreen>

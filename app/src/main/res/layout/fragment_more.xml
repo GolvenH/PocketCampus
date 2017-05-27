@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bzu.yhd.pocketcampus.bottomnav.user.view.AvatarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <com.bzu.yhd.pocketcampus.bottomnav.user.view.PullToRefeshLayout
+            android:id="@+id/pulltorefeshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/avatar"/>
+
+            <LinearLayout
+                android:id="@+id/colorlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:text="丶Roy"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/mytalk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="我的说说"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/mycollection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="我的收藏"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <RelativeLayout
+                                    android:id="@+id/user_info"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:background="?android:attr/selectableItemBackground">
+
+                                    <ImageView
+                                        android:id="@+id/image_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:tint="@color/color_read"
+                                        app:srcCompat="@drawable/svg_ic_smile" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_toEndOf="@+id/image_1"
+                                        android:text="个人资料"
+                                        android:textColor="@color/gary_30"
+                                        android:textSize="16sp" />
+                                </RelativeLayout>
+
+                                <View
+                                    android:id="@+id/view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginStart="60dp"
+                                    android:background="@color/line_bg" />
+
+                                <RelativeLayout
+                                    android:id="@+id/layout_theme_change"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:background="?android:attr/selectableItemBackground">
+
+                                    <ImageView
+                                        android:id="@+id/image_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        app:srcCompat="@drawable/svg_ic_theme"
+                                        android:tint="@color/color_read"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_toEndOf="@+id/image_3"
+                                        android:text="@string/theme_mode"
+                                        android:textColor="@color/gary_30"
+                                        android:textSize="16sp"/>
+
+                                    <TextView
+                                        android:id="@+id/day_night_mode_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_toLeftOf="@+id/day_night_mode_switch"
+                                        android:text="@string/day_mode"
+                                        android:textColor="@color/gary_30"
+                                        android:textSize="14sp"/>
+
+
+                                    <com.bzu.yhd.pocketcampus.widget.BackgroundDrawableSwitchCompat
+                                        android:id="@+id/day_night_mode_switch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginRight="20dp"
+                                        android:layout_alignParentRight="true"
+                                        android:textColor="@color/gary_30"
+                                        app:switchMinWidth="60dp"
+                                        app:thumbTint="@android:color/holo_blue_light" />
+                                </RelativeLayout>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginStart="60dp"
+                                    android:background="@color/line_bg"/>
+                                <RelativeLayout
+                                    android:id="@+id/layout_setting"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:background="?android:attr/selectableItemBackground">
+
+                                    <ImageView
+                                        android:id="@+id/image_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        app:srcCompat="@drawable/svg_ic_settings"
+                                        android:tint="@color/color_read"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_toEndOf="@+id/image_4"
+                                        android:text="@string/common_setting"
+                                        android:textColor="@color/gary_30"
+                                        android:textSize="16sp"/>
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+            </LinearLayout>
+        </com.bzu.yhd.pocketcampus.bottomnav.user.view.PullToRefeshLayout>
+    </com.bzu.yhd.pocketcampus.bottomnav.user.view.AvatarLayout>
+</RelativeLayout>

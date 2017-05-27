@@ -13,12 +13,13 @@ import android.support.v4.content.ContextCompat;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
 import com.bzu.yhd.pocketcampus.R;
+import com.bzu.yhd.pocketcampus.base.BaseApplication;
+import com.bzu.yhd.pocketcampus.base.CheckPermissionsActivity;
 import com.bzu.yhd.pocketcampus.bottomnav.home.FirstFragment;
 import com.bzu.yhd.pocketcampus.bottomnav.home.HomeListFragment;
 import com.bzu.yhd.pocketcampus.bottomnav.test.SecondFragment;
 import com.bzu.yhd.pocketcampus.bottomnav.user.UserInfoFragment;
 import com.bzu.yhd.pocketcampus.widget.utils.PrefUtil;
-import com.bzu.yhd.pocketcampus.base.CheckPermissionsActivity;
 
 import org.polaric.colorful.Colorful;
 
@@ -50,6 +51,7 @@ public class    HomeActivity extends CheckPermissionsActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        BaseApplication.getInstance().addActivity(this);
 
         initAHBottomNavigation(savedInstanceState);
         initFragment(savedInstanceState);

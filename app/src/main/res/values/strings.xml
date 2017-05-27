@@ -85,10 +85,13 @@
     <string name="key_night_mode_time">key_night_mode_time</string>
     <string name="key_upper_city">key_upper_city</string>
     <string name="key_inputted_city">key_inputted_city</string>
-    <string name="key_theme">key_theme</string>
     <string name="key_cache">key_cache</string>
     <string name="key_city">key_city</string>
+    <string name="key_changeicons">key_changeicons</string>
+    <string name="key_changetime">key_changetime</string>
+    <string name="key_notmodel">key_notmodel</string>
     <string name="key_feedback">key_feedback</string>
+    <string name="key_logout">key_logout</string>
     <string name="action_locate_succeed">key_locate_succeed</string>
     <string name="param_is_upper_city">param_is_upper_city</string>
 
@@ -169,7 +172,9 @@
         <item>每3小时</item>
         <item>每6小时</item>
     </string-array>
-    <string name="title_activity_weather">WeatherActivity</string>
+    <string name="title_activity_weather">天气</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_meedit">个人资料</string>
+    <string name="title_activity_re_passwd">重置密码</string>
 
 </resources>

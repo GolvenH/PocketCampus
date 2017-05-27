@@ -10,7 +10,11 @@ package com.bzu.yhd.pocketcampus.base;
 public class Config {
 
     public static final String WEATHER_CACHE = "weatherData";
+/*
     public static final String KEY = "282f3846df6b41178e4a2218ae083ea7";// 和风天气 key
+*/
+    public static final String KEY = "db952db2823c40608555af938025c71c";// 和风天气 key
+
     public static final String ORM_NAME = "cities.db";
 
 }

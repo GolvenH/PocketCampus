@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -15,7 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bzu.yhd.pocketcampus.R;
+import com.bzu.yhd.pocketcampus.model.User;
 import com.bzu.yhd.pocketcampus.widget.utils.HttpDialogUtils;
+
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.LogInListener;
 
 ;
 
@@ -97,9 +103,55 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                 }
             }, 1000);
 
-            Intent i=new Intent();
-            i.setClass(LoginActivity.this,HomeActivity.class);
-            startActivity(i);
+            BmobUser.loginByAccount(userName, password, new LogInListener<User>() {
+
+                @Override
+                public void done(User user, BmobException e) {
+                    if(user!=null){
+                        Log.i("smile","用户登陆成功");
+                        Toast.makeText(LoginActivity.this, "登陆成功,欢迎回来", Toast.LENGTH_SHORT).show();
+
+                        Intent i=new Intent();
+                        i.setClass(LoginActivity.this,HomeActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                    else
+                    {
+                            int errorcode=e.getErrorCode();
+                            if (errorcode==9001)
+                            {
+                                Toast.makeText(LoginActivity.this, "用户登陆失败，Application Id为空，请初始化.", Toast.LENGTH_SHORT).show();
+                            }
+                            if (errorcode==9002)
+                            {
+                                Toast.makeText(LoginActivity.this, "用户登陆失败，解析返回数据出错.", Toast.LENGTH_SHORT).show();
+                            }
+                            if (errorcode==9010)
+                            {
+                                Toast.makeText(LoginActivity.this, "用户登陆失败，网络超时.", Toast.LENGTH_SHORT).show();
+                            }
+                            if (errorcode==9016)
+                            {
+                                Toast.makeText(LoginActivity.this, "用户登陆失败，无网络连接，请检查您的手机网络.", Toast.LENGTH_SHORT).show();
+                            }
+                            if (errorcode==101)
+                            {
+                                Toast.makeText(LoginActivity.this, "用户登陆失败，用户名密码错误", Toast.LENGTH_SHORT).show();
+                            }
+                    }
+                }
+            });
+
         }
     }
+
+
+   /* public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            //不写东西，按下返回键就没操作
+        }
+        return false;
+    }*/
 }

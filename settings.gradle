@@ -1,9 +1,11 @@
 include ':app'
-//ColorfulÖ÷ÌâÇĞ»»¿ò¼Ü
+//Colorfulä¸»é¢˜åˆ‡æ¢æ¡†æ¶
 include ':libraries:library'
-//»¬¶¯·µ»Ø
+//æ»‘åŠ¨è¿”å›
 include ':libraries:SlideBack'
-//bottomnavigationµ×²¿µ¼º½À¸
+//bottomnavigationåº•éƒ¨å¯¼èˆªæ 
 include ':libraries:ahbottomnavigation'
-//¶¯»­
+//åŠ¨ç”»
 include ':libraries:grav'
+//å›¾ç‰‡é€‰æ‹©
+include ':libraries:imgselect_library'

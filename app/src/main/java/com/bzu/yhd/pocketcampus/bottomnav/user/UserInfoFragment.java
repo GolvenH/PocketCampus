@@ -1,6 +1,9 @@
 package com.bzu.yhd.pocketcampus.bottomnav.user;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -9,20 +12,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bzu.yhd.pocketcampus.R;
-import com.bzu.yhd.pocketcampus.widget.utils.PrefUtil;
-import com.bzu.yhd.pocketcampus.view.main.AboutActivity;
+import com.bzu.yhd.pocketcampus.base.BaseApplication;
+import com.bzu.yhd.pocketcampus.bottomnav.user.view.BlurBitmapUtil;
+import com.bzu.yhd.pocketcampus.model.User;
 import com.bzu.yhd.pocketcampus.view.main.HomeActivity;
 import com.bzu.yhd.pocketcampus.view.main.SettingActivity;
 import com.bzu.yhd.pocketcampus.view.main.ThemeActivity;
+import com.bzu.yhd.pocketcampus.widget.utils.PrefUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
 import org.polaric.colorful.Colorful;
 
 import java.util.Calendar;
+
+import cn.bmob.v3.datatype.BmobFile;
 
 /**
  * @CreateBy YHD
@@ -31,45 +43,72 @@ import java.util.Calendar;
  */
 public class UserInfoFragment extends Fragment {
 
-    private RelativeLayout rel_theme, rel_setting,rel_aboutapp;
+    private RelativeLayout rel_userinfo,rel_theme, rel_setting;
     private Intent intent;
 
     private SwitchCompat mSwitch;
     private TextView mDayNightText;
     private String mAutoSwitchedHint;
-
-    public UserInfoFragment()
-    {
-    }
+    private LinearLayout colorlayout;
+    private ImageView ivBackGround;
+    private TextView txmytalk;
+    private TextView txmycollection ;
+    private User user;
 
     public static UserInfoFragment newInstance(String param1, String param2) {
         UserInfoFragment fragment = new UserInfoFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
+
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(getActivity()));
 
     }
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_user, container, false);
-        if (savedInstanceState == null)
-            checkAutoDayNightMode();
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(getActivity()));
 
+        View view = inflater.inflate(R.layout.fragment_more, container, false);
+        if (savedInstanceState == null)
+        {
+            checkAutoDayNightMode();
+        }
+        rel_userinfo = (RelativeLayout) view.findViewById(R.id.user_info);
         rel_theme = (RelativeLayout) view.findViewById(R.id.layout_theme_change);
         rel_setting = (RelativeLayout) view.findViewById(R.id.layout_setting);
-        rel_aboutapp= (RelativeLayout) view.findViewById(R.id.layout_about_app);
+        colorlayout = (LinearLayout) view.findViewById(R.id.colorlayout);
+
         mSwitch = (SwitchCompat) view.findViewById(R.id.day_night_mode_switch);
         mDayNightText = (TextView) view.findViewById(R.id.day_night_mode_text);
+        txmytalk = (TextView) view.findViewById(R.id.mytalk);
+        txmycollection = (TextView) view.findViewById(R.id.mycollection);
+
         mSwitch.setChecked(Colorful.getThemeDelegate().isNight());
         mDayNightText.setText(mSwitch.isChecked() ? getString(R.string.night_mode) : getString(R.string.day_mode));
 
+        if(Colorful.getThemeDelegate().isNight())
+        {
+            colorlayout.setBackgroundColor(Color.parseColor("#303030"));
+        }
+        else{
+            colorlayout.setBackgroundColor(Color.parseColor("#eeeeee"));
+        }
+
+        rel_userinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent();
+                intent.setClass(getActivity(), MeEditActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -104,16 +143,36 @@ public class UserInfoFragment extends Fragment {
                 }
             }
         });
-        rel_aboutapp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v.getId() == R.id.layout_about_app) {
-                    intent = new Intent();
-                    intent.setClass(getActivity(), AboutActivity.class);
-                    getActivity().startActivity(intent);
-                }
-            }
-        });
+
+
+        ivBackGround = (ImageView) view.findViewById(R.id.iv_bg);
+        Bitmap bitmap = BlurBitmapUtil.blurBitmap(getActivity(), BitmapFactory.decodeResource(getResources(), R.mipmap.avatar), 3f);
+
+        user = BaseApplication.getInstance().getCurrentUser();
+
+        BmobFile file = user.getFile();
+        if (null != file) {
+            ImageLoader.getInstance().displayImage(
+                    file.getFileUrl(), ivBackGround,
+                    BaseApplication.getInstance().getOptions(
+                            R.mipmap.avatar),
+                    new SimpleImageLoadingListener() {
+                        @Override
+                        public void onLoadingComplete(
+                                String imageUri, View view,
+                                Bitmap loadedImage) {
+                            // TODO Auto-generated method
+                            // stub
+                            super.onLoadingComplete(
+                                    imageUri, view,
+                                    loadedImage);
+                        }
+
+                    });
+/*
+            ivBackGround.setImageBitmap(bitmap);
+*/
+        }
         return view;
     }
 

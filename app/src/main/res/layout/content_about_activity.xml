@@ -73,6 +73,29 @@
             android:layout_marginTop="@dimen/space"
             tools:text="@string/license"/>
 
+
+
+        <com.xw.repo.VectorCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/four_dp"
+            android:gravity="center"
+            android:text="@string/feed_back"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/text_size_16sp"
+            app:drawableLeftCompat="@drawable/svg_ic_feedback"
+            app:tintDrawableInTextColor="true"/>
+
+        <TextView
+            android:id="@+id/feed_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space"
+            android:layout_marginLeft="@dimen/space2x"
+            android:layout_marginTop="@dimen/space"
+            tools:text="@string/feed_back"/>
+
+
         <com.xw.repo.VectorCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,6 +113,7 @@
             android:layout_marginLeft="@dimen/space2x"
             android:layout_marginTop="@dimen/space"
             android:text="@string/thanks_list"/>
+
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

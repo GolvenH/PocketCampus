@@ -53,11 +53,11 @@ public class TimeButton extends Button implements OnClickListener {
 	@SuppressLint("HandlerLeak")
 	Handler han = new Handler() {
 		public void handleMessage(android.os.Message msg) {
-			TimeButton.this.setText(time / 1000 + textafter);
+			TimeButton.this.setText(" "+time / 1000 + textafter+" ");
 			time -= 1000;
 			if (time < 0) {
 				TimeButton.this.setEnabled(true);
-				TimeButton.this.setText(textbefore);
+				TimeButton.this.setText(" "+textbefore+" ");
 				clearTimer();
 			}
 		}
