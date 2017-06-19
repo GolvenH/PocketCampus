@@ -18,5 +18,5 @@
         android:paddingTop="@dimen/four_dp"
         android:text="位置"
         android:textColor="@android:color/white"
-        app:drawableLeftCompat="@drawable/svg_ic_location"/>
+        app:drawableLeftCompat="@drawable/svg_ic_location" />
 </FrameLayout>

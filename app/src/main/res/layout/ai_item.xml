@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="left"
+    android:id="@+id/item_ai"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.bzu.yhd.pocketcampus.widget.CircleImageView
+                android:id="@+id/user_logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/bullet_gap_width"
+                android:src="@mipmap/avatar" />
+
+            <TextView
+                android:id="@+id/user_name"
+                style="@style/TextTheme"
+                android:layout_alignTop="@id/user_logo"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@id/user_logo"
+                android:text="岁月抚伤" />
+
+            <TextView
+                android:id="@+id/talk_time"
+                style="@style/TextTheme"
+                android:layout_below="@id/user_name"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@id/user_logo"
+                android:text="1分钟前"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/item_action_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/user_logo"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/user_logo"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_action_fav_normal" />
+
+            <TextView
+                android:id="@+id/content_text"
+                style="@style/TextTheme"
+                android:layout_below="@id/user_logo"
+                android:layout_margin="8dp"
+                android:text="十年之前，我不认识你 你不属于我，我们还是一样，陪在一个陌生人左右，走过渐渐熟悉的街头;十年之后，我们是朋友， 还可以问候，只是那种温柔，再也找不到拥抱的理由，情人最后难免沦为朋友。" />
+
+            <com.bzu.yhd.pocketcampus.widget.NoScrollGridView
+                android:id="@+id/content_images"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content_text"
+                android:layout_marginLeft="10dp"
+                android:horizontalSpacing="1dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="1dp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/item_action_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/content_images"
+                android:layout_marginBottom="4dip"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="4dip"
+                android:drawableLeft="@mipmap/ic_action_comment"
+                android:gravity="center"
+                android:text="评论" />
+
+
+            <TextView
+                android:id="@+id/item_action_hate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content_images"
+                android:layout_marginBottom="4dip"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="4dip"
+                android:layout_toLeftOf="@id/item_action_comment"
+                android:drawableLeft="@mipmap/action_hate"
+                android:gravity="center"
+                android:text="100"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/item_action_love"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content_images"
+                android:layout_marginBottom="4dip"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="4dip"
+                android:layout_toLeftOf="@id/item_action_hate"
+                android:drawableLeft="@mipmap/ic_action_loves"
+                android:gravity="center"
+                android:text="985赞" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

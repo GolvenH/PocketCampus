@@ -3,10 +3,10 @@ package com.bzu.yhd.pocketcampus.widget;
 import com.bzu.yhd.pocketcampus.BuildConfig;
 import com.bzu.yhd.pocketcampus.base.BaseApplication;
 import com.bzu.yhd.pocketcampus.base.Config;
+import com.bzu.yhd.pocketcampus.bottomnav.home.weather.domain.CityORM;
 import com.bzu.yhd.pocketcampus.widget.utils.PLog;
 import com.bzu.yhd.pocketcampus.widget.utils.RxUtils;
 import com.bzu.yhd.pocketcampus.widget.utils.SimpleSubscriber;
-import com.bzu.yhd.pocketcampus.bottomnav.home.weather.domain.CityORM;
 import com.litesuits.orm.LiteOrm;
 
 import rx.Observable;

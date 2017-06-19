@@ -22,9 +22,9 @@ import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.base.BaseApplication;
 import com.bzu.yhd.pocketcampus.bottomnav.user.view.BlurBitmapUtil;
 import com.bzu.yhd.pocketcampus.model.User;
-import com.bzu.yhd.pocketcampus.view.main.HomeActivity;
-import com.bzu.yhd.pocketcampus.view.main.SettingActivity;
-import com.bzu.yhd.pocketcampus.view.main.ThemeActivity;
+import com.bzu.yhd.pocketcampus.main.HomeActivity;
+import com.bzu.yhd.pocketcampus.main.SettingActivity;
+import com.bzu.yhd.pocketcampus.main.ThemeActivity;
 import com.bzu.yhd.pocketcampus.widget.utils.PrefUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -51,9 +51,8 @@ public class UserInfoFragment extends Fragment {
     private String mAutoSwitchedHint;
     private LinearLayout colorlayout;
     private ImageView ivBackGround;
-    private TextView txmytalk;
-    private TextView txmycollection ;
     private User user;
+    private TextView username;
 
     public static UserInfoFragment newInstance(String param1, String param2) {
         UserInfoFragment fragment = new UserInfoFragment();
@@ -84,11 +83,9 @@ public class UserInfoFragment extends Fragment {
         rel_theme = (RelativeLayout) view.findViewById(R.id.layout_theme_change);
         rel_setting = (RelativeLayout) view.findViewById(R.id.layout_setting);
         colorlayout = (LinearLayout) view.findViewById(R.id.colorlayout);
-
+        username =(TextView)view.findViewById(R.id.userNickname);
         mSwitch = (SwitchCompat) view.findViewById(R.id.day_night_mode_switch);
         mDayNightText = (TextView) view.findViewById(R.id.day_night_mode_text);
-        txmytalk = (TextView) view.findViewById(R.id.mytalk);
-        txmycollection = (TextView) view.findViewById(R.id.mycollection);
 
         mSwitch.setChecked(Colorful.getThemeDelegate().isNight());
         mDayNightText.setText(mSwitch.isChecked() ? getString(R.string.night_mode) : getString(R.string.day_mode));
@@ -149,7 +146,11 @@ public class UserInfoFragment extends Fragment {
         Bitmap bitmap = BlurBitmapUtil.blurBitmap(getActivity(), BitmapFactory.decodeResource(getResources(), R.mipmap.avatar), 3f);
 
         user = BaseApplication.getInstance().getCurrentUser();
-
+        if(user.getNickName()!=null) {
+            username.setText(user.getNickName());
+        }else {
+            username.setText("快来更新自己的资料吧~~");
+        }
         BmobFile file = user.getFile();
         if (null != file) {
             ImageLoader.getInstance().displayImage(

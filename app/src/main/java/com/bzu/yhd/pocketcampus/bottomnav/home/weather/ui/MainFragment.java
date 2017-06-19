@@ -189,13 +189,8 @@ public class MainFragment extends BaseFragment  {
     }
 
     /**
-     * 加载数据操作,在视图创建之前初始化
+     * 通知栏天气
      */
-    @Override
-    protected void lazyLoad() {
-
-    }
-
     private void normalStyleNotification(Weather weather) {
         Intent intent = new Intent(getActivity(), WeatherActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);

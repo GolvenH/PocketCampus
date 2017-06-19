@@ -21,8 +21,8 @@ import android.widget.Toast;
 
 import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.base.BaseActivity;
-import com.bzu.yhd.pocketcampus.bottomnav.home.service.AutoUpdateService;
-import com.bzu.yhd.pocketcampus.bottomnav.home.service.LocationService;
+import com.bzu.yhd.pocketcampus.bottomnav.home.weather.service.AutoUpdateService;
+import com.bzu.yhd.pocketcampus.bottomnav.home.weather.service.LocationService;
 import com.bzu.yhd.pocketcampus.widget.utils.PLog;
 import com.bzu.yhd.pocketcampus.widget.utils.PrefUtil;
 import com.bzu.yhd.pocketcampus.widget.utils.SharedPreferenceUtil;
@@ -212,7 +212,6 @@ public class WeatherActivity extends BaseActivity {
         final TextView manualText = (TextView) view.findViewById(R.id.dialog_loc_input_manually_text);
         final View inputLayout = view.findViewById(R.id.dialog_loc_input_layout);
         final EditText inputEdit = (EditText) view.findViewById(R.id.dialog_loc_edit);
-
         if (upperCity) {
             msgText.setText(getString(R.string.hint_query_by_upper_city, PrefUtil.getCity(),
                     PrefUtil.getUpperCity()));
@@ -232,7 +231,6 @@ public class WeatherActivity extends BaseActivity {
                     inputLayout.setVisibility(View.VISIBLE);
             }
         });
-
         builder.setView(view);
         builder.setNegativeButton(getString(R.string.locate_again), new DialogInterface.OnClickListener() {
             @Override
@@ -256,7 +254,6 @@ public class WeatherActivity extends BaseActivity {
                     }
                     return;
                 }
-
                 if (upperCity) {
                     PrefUtil.setCity(PrefUtil.getUpperCity());
                     mCityText.setText(PrefUtil.getCityShort());

@@ -167,9 +167,7 @@ public class WeatherAdapter extends AnimRecyclerViewAdapter<RecyclerView.ViewHol
                 itemHourInfoLayout.addView(view);
             }
         }
-
         protected void bind(Weather weather) {
-
             try {
                 for (int i = 0; i < weather.hourlyForecast.size(); i++) {
                     //s.subString(s.length-3,s.length);

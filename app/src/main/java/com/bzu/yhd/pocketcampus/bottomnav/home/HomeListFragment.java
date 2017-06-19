@@ -41,8 +41,6 @@ public class HomeListFragment extends Fragment implements ViewPager.OnPageChange
     RelativeLayout relativeLayout;
     @BindView(R.id.pagerstabs)
     PagerSlidingTabStrip tabs;
-    @BindView(R.id.btn_home_left)
-    ImageView limageVie;
     @BindView(R.id.btn_home_right)
     ImageView rimageVie;
     private Unbinder mUnbinder;
@@ -69,8 +67,8 @@ public class HomeListFragment extends Fragment implements ViewPager.OnPageChange
 
     private void initView() {
         mFragmentArrayList = new ArrayList<>();
-        mFragmentArrayList.add(new FirstFragment());
-        mFragmentArrayList.add(new ThirdFragment());
+        mFragmentArrayList.add(new HomeFragment());
+        mFragmentArrayList.add(new UpTalkFragment());
 
         tabs.setTextSize(28);
         if (Colorful.getThemeDelegate().isNight()) {
@@ -117,22 +115,13 @@ public class HomeListFragment extends Fragment implements ViewPager.OnPageChange
         mVpNewsList.addOnPageChangeListener(this);
         tabs.setViewPager(mVpNewsList);
 
-        limageVie.setOnClickListener(new View.OnClickListener() {
+        rimageVie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"天气",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
                 intent.setClass(getContext(), WeatherActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        rimageVie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"附近",Toast.LENGTH_SHORT).show();
-            }
+                startActivity(intent);            }
         });
 
     }

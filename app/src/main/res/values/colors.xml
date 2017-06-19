@@ -71,14 +71,9 @@
     <color name="alpha_white_color_80">#ccffffff</color>
     <color name="alpha_white_color_90">#e5ffffff</color>
 
-
-
-
     <color name="colorSunrise">#0D4A6A</color>
     <color name="colorSunset">#201D45</color>
-
     <color name="textHint">#8C8C8C</color>
-
 
     <color name="aboutIcon">#106c99</color>
     <!--多城市列表和卡片配色-->
@@ -99,5 +94,93 @@
 
     <color name="lineColor">#60d3d3d3</color>
     <color name="defaultTextColor">#6f6f6f</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="base_color_text_black">#3e3e39</color>
+    <color name="base_color_text_gray">#9fa0a0</color>
+    <color name="base_color_text_white">#ffffff</color>
+    <color name="color_theme">#489cfa</color>
+
+    <color name="color_emote_divder">#ffa1a1a1</color>
+    <color name="color_bottom_bg">#272a2e</color>
+    <color name="color_bottom_text_normal">#9da0a4</color>
+    <color name="color_bottom_text_press">#4f9ef6</color>
+    <color name="text_gray">#969696</color>
+    <color name="msg_chat_bg">#eceff4</color>
+
+    <color name="theme_bg_color">#f0f2f5</color>
+    <color name="c_f98800">#ed4e23</color>
+    <color name="base_bg">#f4f6f6</color>
+    <color name="dialog_color_title">#f82c22</color>
+    <color name="guide_color">#898989</color>
+
+    <color name="common_bg">#fcfcfc</color>
+    <color name="color_99">#999999</color>
+    <color name="color_line">#dadada</color>
+    <color name="color_chat_send_status">#818181</color>
+    <color name="color_msg_system_time_bg">#20000000</color>
+    <color name="color_1e1e1e">#1e1e1e</color>
+    <color name="color_b4">#b4b4b4</color>
+    <color name="card_view_background_dark">#FFFFFF</color>
+    <color name="color_unread">#000000</color>
+    <color name="black_90">#dd000000</color>
+    <color name="sr_window_background">#FFFFFF</color>
+    <color name="font_normal">#555555</color>
+    <color name="navigation_item_icon_color_normal">#AEAEAE</color>
+    <color name="bottom_tab_bar_color">#FEFEFE</color>
+    <color name="nav_text_color_mormal">#D3D3D3</color>
+    <color name="font_gray">#656565</color>
+    <color name="black_alpha_45">#71000000</color>
+    <color name="gray_light">#dcdcdc</color>
+
+
+
+
+
+
+
+
+    <color name="ac_background">#f6f5f5</color>
+    <color name="ac_bottom_bar">#3c3c3c</color>
+    <color name="ac_bg_side_nav_actions">#252932</color>
+    <color name="text_navigation_title">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="bg_comment_list_item">#f6f5f5</color>
+    <color name="bg_comment_list_item_highlight">#ffffff</color>
+    <color name="bg_exhibition_desc">#f3f2ed</color>
+
+    <!-- V2.0 -->
+    <color name="base_actionbar_bg">#eb4e3d</color>
+    <color name="base_action_bar_title_color">#ffffff</color>
+    <color name="base_tab_indicator_text_color">#f82c22</color>
+    <color name="base_menu_left_bg">#393c44</color>
+    <color name="pull_refresh_textview">#000000</color>
+    <color name="home_item_color_bg">#f4f6f6</color>
+    <color name="green">#5cbe6c</color>
+    <!-- zxing -->
+    <color name="result_view">#b0000000</color>
+    <color name="color_half_transparent">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="color_transparent_bg">#80000000</color>
+    <color name="color_transparent_bg1">#e0000000</color>
+    <!-- emot -->
+    <color name="msg_emote_divider">#ffa1a1a1</color>
+    <!-- trend -->
+    <color name="trend_bottom_bg">#f7f7f7</color>
+
+
+    <color name="btn_default_light_normal">#00000000</color>
+    <color name="btn_default_light_pressed">#40ffffff</color>
+    <color name="btn_send_normal">#02c754</color>
+    <color name="btn_send_pressed">#006633</color>
+    <color name="btn_default_shadow">#99000000</color>
+    <color name="btn_context_menu_normal">#ffffff</color>
+    <color name="btn_context_menu_pressed">#40000000</color>
+    <color name="btn_context_menu_text_red">#ffff0000</color>
+
+
+
 
 </resources>

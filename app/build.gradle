@@ -15,6 +15,8 @@ android {
         versionName "1.0.3"
         resConfigs "zh" // 仅支持中文
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
 
     }
     buildTypes {
@@ -25,6 +27,22 @@ android {
         }
         debug {
             debuggable true
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file(STORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.debug
         }
     }
     lintOptions {
@@ -46,6 +64,9 @@ android {
     // recommend
     dexOptions {
         jumboMode = true
+        incremental = true;
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
     }
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
@@ -109,12 +130,42 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
 
     compile files('libs/lite-orm-1.9.2.jar')
+    compile files('libs/picasso-2.5.2.jar')
+    compile files('libs/photoview-library-1.2.2.jar')
+    compile files('libs/libapshare.jar')
+    compile files('libs/SocialSDK_alipay.jar')
+    compile files('libs/SocialSDK_douban.jar')
+    compile files('libs/SocialSDK_email.jar')
+    compile files('libs/SocialSDK_renren.jar')
+    compile files('libs/SocialSDK_sms.jar')
+    compile files('libs/SocialSDK_QQ_Simplify.jar')
+    compile files('libs/SocialSDK_Sina_Full.jar')
+    compile files('libs/SocialSDK_WeChat_Simplify.jar')
+    compile files('libs/umeng_shareboard_widget.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_shareboard.jar')
+    compile files('libs/umeng_social_shareview.jar')
+    compile files('libs/umeng_social_tool.jar')
+    compile files('libs/weiboSDKCore_3.1.4.jar')
+
+    compile files('libs/baidumapapi_base_v4_3_1.jar')
+    compile files('libs/baidumapapi_cloud_v4_3_1.jar')
+    compile files('libs/baidumapapi_map_v4_3_1.jar')
+    compile files('libs/baidumapapi_radar_v4_3_1.jar')
+    compile files('libs/baidumapapi_search_v4_3_1.jar')
+    compile files('libs/baidumapapi_util_v4_3_1.jar')
+    compile files('libs/locSDK_6.13.jar')
+    compile files('libs/renderscript-v8.jar')
+
+
     compile files('libs/universal-image-loader-1.9.5.jar')
     compile project(':libraries:library')
     compile project(':libraries:SlideBack')
     compile project(':libraries:ahbottomnavigation')
     compile project(':libraries:grav')
     compile project(':libraries:imgselect_library')
+    compile project(':libraries:banner')
 
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.xw.repo:bubbleseekbar:3.2@aar'
@@ -129,11 +180,17 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.0.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
     compile 'com.victor:lib:1.0.1'
-    //远郊头像
+    //圆角头像
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.facebook.rebound:rebound:0.3.8'
 
     compile 'com.facebook.fresco:fresco:0.6.0'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    //汉字转拼音
+    compile 'com.github.promeg:tinypinyin:1.0.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile 'com.android.support:multidex:1.0.1'
 
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'

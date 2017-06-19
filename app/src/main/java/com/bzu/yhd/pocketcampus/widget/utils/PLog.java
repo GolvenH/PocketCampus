@@ -169,4 +169,6 @@ public class PLog {
         if (lineNumber < 0) lineNumber = 0;
         return "(" + className + ":" + lineNumber + ") " + message;
     }
+
+
 }

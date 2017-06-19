@@ -25,8 +25,9 @@ import com.bumptech.glide.Glide;
 import com.bzu.yhd.pocketcampus.R;
 import com.bzu.yhd.pocketcampus.base.BaseActivity;
 import com.bzu.yhd.pocketcampus.base.BaseApplication;
-import com.bzu.yhd.pocketcampus.bottomnav.user.view.AddressPickTask;
 import com.bzu.yhd.pocketcampus.model.User;
+import com.bzu.yhd.pocketcampus.bottomnav.user.view.AddressPickTask;
+import com.bzu.yhd.pocketcampus.main.RePasswdActivity;
 import com.bzu.yhd.pocketcampus.widget.utils.CacheUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -155,7 +156,6 @@ public class MeEditActivity extends BaseActivity implements OnClickListener{
 
                 } else {
                     txDisplayName.setText(user.getNickName());
-
                 }
 
                 //地区
@@ -450,11 +450,9 @@ public class MeEditActivity extends BaseActivity implements OnClickListener{
                     txGender.setText("女");
                     updateSex(2);
                 }
-
                 dlg.cancel();
             }
         });
-
     }
 
     private void updateSex(int sex)
@@ -466,7 +464,30 @@ public class MeEditActivity extends BaseActivity implements OnClickListener{
             } else {
                 user.setSex("女");
             }
+            user.update(new UpdateListener()
+            {
+                @Override
+                public void done(BmobException e) {
+                    if(e==null){
+                        showToast("更改信息成功。");
+                        initData();
+                        Log.i("bmob","更新成功");
+                    }else{
+                        showToast("更改信息成功。");
+                        Log.i("bmob","更新失败："+e.getMessage()+","+e.getErrorCode());
+                    }
+                }
+            });
+        }
+    }
 
+    private void updateAvatar()
+    {
+        User user = BmobUser.getCurrentUser(User.class);
+        BmobFile file = user.getFile();
+        if (null != file) {
+            String savata= file.getFileUrl();
+            user.setAvatar(savata);
             user.update(new UpdateListener()
             {
                 @Override
@@ -490,9 +511,7 @@ public class MeEditActivity extends BaseActivity implements OnClickListener{
     @Override
     public void onActivityResult(int requestCode, int resultCode,Intent data)
     {
-        // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
-
 
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null)
         {
@@ -574,6 +593,7 @@ public class MeEditActivity extends BaseActivity implements OnClickListener{
                                         if(e==null){
                                             showToast("上传头像成功。");
                                             initData();
+                                            updateAvatar();
                                             Log.i("bmob","更新成功");
                                         }else{
                                             showToast("上传头像失败。");
@@ -600,7 +620,6 @@ public class MeEditActivity extends BaseActivity implements OnClickListener{
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("aspectX", 1);
         intent.putExtra("aspectY", 1);
-        // outputX outputY 锟角裁硷拷图片锟斤拷锟?
         intent.putExtra("outputX", 120);
         intent.putExtra("outputY", 120);
         intent.putExtra("crop", "true");

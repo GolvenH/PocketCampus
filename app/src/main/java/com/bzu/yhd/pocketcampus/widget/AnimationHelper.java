@@ -15,7 +15,6 @@ public class AnimationHelper
 
     /**
      * 扩散动画
-     *
      * @param target      动画播放对象
      * @param endScale    最终缩放大小
      * @param endListener 动画监听
@@ -24,59 +23,50 @@ public class AnimationHelper
     {
         ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(target, "ScaleX", endScale);
         scaleXAnimator.setInterpolator(new AccelerateInterpolator());
-
         ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(target, "ScaleY", endScale);
         scaleYAnimator.setInterpolator(new AccelerateInterpolator());
-
         AnimatorSet animSet = new AnimatorSet();
         animSet.play(scaleXAnimator).with(scaleYAnimator);
         animSet.setDuration(500);
         animSet.start();
-
         animSet.addListener(endListener);
     }
-
     /**
      * 线条延长动画
-     *
      * @param target
      */
     public static void lineExpendAni(View target, SimpleAnimatorListener endListener)
     {
         target.setVisibility(View.VISIBLE);
-
         ObjectAnimator animator = ObjectAnimator.ofFloat(target, "ScaleX", 0, 0.6f, 0.9f, 1.0f);
         animator.setDuration(1500);
         animator.setInterpolator(new DecelerateInterpolator());
         target.setPivotX(0);
         animator.start();
-
         animator.addListener(endListener);
     }
 
     /**
      * sign up文字入场动画
-     *
      * @param target      需要播放动画的view
      * @param endListener 动画监听
      */
-    public static void signUpTextInAni(View target, SimpleAnimatorListener endListener)
+    public static void signUpTextInAni(View target,
+                                       SimpleAnimatorListener endListener)
     {
         target.setVisibility(View.VISIBLE);
-
         int targetHeight = target.getMeasuredHeightAndState();
-
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(target, "ScaleX", 0.75f, 0.87f, 1f, 1.1f, 1.0f);
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(target, "ScaleY", 0.75f, 0.87f, 1f, 1.1f, 1.0f);
-        ObjectAnimator translationAni = ObjectAnimator.ofFloat(target, "TranslationY", targetHeight * 0.8f, -targetHeight * 0.2f, 0);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(target,
+                "ScaleX", 0.75f, 0.87f, 1f, 1.1f, 1.0f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(target,
+                "ScaleY", 0.75f, 0.87f, 1f, 1.1f, 1.0f);
+        ObjectAnimator translationAni = ObjectAnimator.ofFloat(target, "TranslationY",
+                targetHeight * 0.8f, -targetHeight * 0.2f, 0);
         ObjectAnimator alphaAni = ObjectAnimator.ofFloat(target, "Alpha", 0.5f, 1.0f);
-
         AnimatorSet animatorSet = new AnimatorSet();
-
         animatorSet.playTogether(scaleX, scaleY, translationAni, alphaAni);
         animatorSet.setDuration(2000);
         animatorSet.start();
-
         animatorSet.addListener(endListener);
     }
 

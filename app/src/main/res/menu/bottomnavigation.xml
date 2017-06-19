@@ -6,11 +6,11 @@
 
     <item
         android:title="@string/menu_2"
-        android:icon="@drawable/ic_discovery_gray" />
+        android:icon="@drawable/ic_message_gray" />
 
     <item
         android:title="@string/menu_3"
-        android:icon="@drawable/ic_message_gray" />
+        android:icon="@drawable/ic_discovery_gray" />
 
     <item
         android:title="@string/menu_4"

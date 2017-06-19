@@ -8,35 +8,15 @@
         <attr name="TintDrawableWithTextColor" format="boolean"/>
     </declare-styleable>
 
-    <!-- 圆形头像控件-->
-    <declare-styleable name="CircleImageView">
-        <attr name="border_width" format="dimension"/>
-        <attr name="border_color2" format="color"/>
-    </declare-styleable>
-
-    <declare-styleable name="ZhihuUserProfileLayout">
-        <attr name="collapsing_offset" format="dimension"/>
-    </declare-styleable>
-
-    <!--进度条-->
-    <declare-styleable name="CircleProgressView">
-        <attr name="matProg_progressIndeterminate" format="boolean"/>
-        <attr name="matProg_barColor" format="color"/>
-        <attr name="matProg_rimColor" format="color"/>
-        <attr name="matProg_rimWidth" format="dimension"/>
-        <attr name="matProg_spinSpeed" format="float"/>
-        <attr name="matProg_barSpinCycleTime" format="integer"/>
-        <attr name="matProg_circleRadius" format="dimension"/>
-        <attr name="matProg_fillRadius" format="boolean"/>
-        <attr name="matProg_barWidth" format="dimension"/>
-        <attr name="matProg_linearProgress" format="boolean"/>
-    </declare-styleable>
-
     <array name="news_title">
         <item>校内中心</item>
         <item>新鲜圈子</item>
     </array>
 
+    <array name="chat_title">
+        <item>会话</item>
+        <item>联系人</item>
+    </array>
     <attr name="pstsIndicatorColor" format="color" />
     <attr name="pstsUnderlineColor" format="color" />
     <attr name="pstsDividerColor" format="color" />
@@ -216,6 +196,46 @@
     </declare-styleable>
 
 
+    <array name="url">
+        <item>
+            http://www.bztc.edu.cn/_upload/article/images/c8/d9/536e39dd4893994830dbedcdc21b/b0f60398-b627-4c5f-8f4d-7afc6dc9b2e6.jpg
+        </item>
+        <item>
+            http://www.bztc.edu.cn/_upload/article/images/07/ff/e91825a24707aaddd4e66d895dc7/b6e5c2f2-f44e-463c-a72f-2786cfd66ceb.jpg
+        </item>
+        <item>
+            http://www.bztc.edu.cn/_upload/article/images/19/17/e59c210d4f78a135adbcb29e2084/d4487040-5eee-4865-8368-87604b82d45e.jpg
+        </item>
+        <item>
+            http://www.bztc.edu.cn/_upload/article/images/a0/54/798c05bb42ecb2a5ce4decab65bc/72328760-213e-4c3c-83b5-4f3e86277485.jpg
+        </item>
+        <item>
+            http://www.bztc.edu.cn/_upload/article/images/47/c0/795d9e774b9eb91db456b72877f0/dc4c026f-43a3-4b2e-a6de-beb9ae9e20ad.jpg
+        </item>
+    </array>
+    <array name="title">
+        <item>
+            山东省教育厅副厅长陈国前来校考察调研
+        </item>
+        <item>
+            我校大学生宿舍文化节闭幕式暨表彰大会举行
+        </item>
+        <item>
+            我校教育发展基金会理事会一届二次会议召开
+        </item>
+        <item>
+            我校推行坐班人员工间操制度
+        </item>
+        <item>
+            滨州学院京博校友会成立暨全面校企合作启动仪式举行
+        </item>
+    </array>
 
 
+
+    <declare-styleable name="PxBlurringView">
+        <attr name="blurRadius" format="integer" />
+        <attr name="downsampleFactor" format="integer" />
+        <attr name="overlayColor" format="color" />
+    </declare-styleable>
 </resources>

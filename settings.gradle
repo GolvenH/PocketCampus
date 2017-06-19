@@ -9,3 +9,5 @@ include ':libraries:ahbottomnavigation'
 include ':libraries:grav'
 //图片选择
 include ':libraries:imgselect_library'
+//图片轮转
+include ':libraries:banner'

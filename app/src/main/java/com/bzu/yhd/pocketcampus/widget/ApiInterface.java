@@ -1,5 +1,6 @@
 package com.bzu.yhd.pocketcampus.widget;
 
+
 import com.bzu.yhd.pocketcampus.bottomnav.home.weather.domain.WeatherAPI;
 
 import retrofit2.http.GET;

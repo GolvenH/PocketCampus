@@ -1,6 +1,8 @@
 package com.bzu.yhd.pocketcampus.model;
 
 
+import com.bzu.yhd.pocketcampus.bottomnav.im.db.NewFriend;
+
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.datatype.BmobGeoPoint;
@@ -8,14 +10,14 @@ import cn.bmob.v3.datatype.BmobRelation;
 
 
 /**
- * 
+ *
  * TODO
  */
 
 public class User extends BmobUser {
 
 	public static final String TAG = "User";
-	
+
 	private String signature;
 	private BmobFile file;
 	private BmobRelation favorite;
@@ -29,47 +31,62 @@ public class User extends BmobUser {
 	private String height;
 	private String weight;
 	private String note;
+	private String avatar;
 
+	public User(){}
 
+	public User(NewFriend friend){
+		setObjectId(friend.getUid());
+		setUsername(friend.getName());
+		setAvatar(friend.getAvatar());
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
 	public String getArea()
-		{
-			return area;
-		}
+	{
+		return area;
+	}
 
 	public void setArea(String area)
-		{
-			this.area = area;
-		}
+	{
+		this.area = area;
+	}
 
 	public String getBirthday()
-		{
-			return birthday;
-		}
+	{
+		return birthday;
+	}
 
 	public void setBirthday(String birthday)
-		{
-			this.birthday = birthday;
-		}
+	{
+		this.birthday = birthday;
+	}
 
 
 	public String getStar()
-		{
-			return star;
-		}
+	{
+		return star;
+	}
 
 	public void setStar(String star)
-		{
-			this.star = star;
-		}
+	{
+		this.star = star;
+	}
 
-	public BmobFile getFile() {		
-			return file;
-		}
+	public BmobFile getFile() {
+		return file;
+	}
 
-		public void setFile(BmobFile file) {
-			this.file = file;
-		}
-	
+	public void setFile(BmobFile file) {
+		this.file = file;
+	}
+
 	public BmobGeoPoint getLocation() {
 		return location;
 	}
